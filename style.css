@@ -11,6 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -19,6 +20,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: fadeIn 2s ease-in-out;
+    position: relative;
 }
 
 h1 {
@@ -73,4 +75,24 @@ button:hover {
 @keyframes slideIn {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Анимация сердечек */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 24px;
+    animation: floatUp 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.5);
+        opacity: 0;
+    }
 }
